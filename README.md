@@ -1,20 +1,22 @@
-# available [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+# tla [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
-[travis-image]: https://img.shields.io/travis/feross/available/master.svg
-[travis-url]: https://travis-ci.org/feross/available
-[npm-image]: https://img.shields.io/npm/v/available.svg
-[npm-url]: https://npmjs.org/package/available
-[downloads-image]: https://img.shields.io/npm/dm/available.svg
-[downloads-url]: https://npmjs.org/package/available
+[travis-image]: https://img.shields.io/travis/bnb/tla/master.svg
+[travis-url]: https://travis-ci.org/bnb/tla
+[npm-image]: https://img.shields.io/npm/v/tla.svg
+[npm-url]: https://npmjs.org/package/tla
+[downloads-image]: https://img.shields.io/npm/dm/tla.svg
+[downloads-url]: https://npmjs.org/package/tla
 [standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
 [standard-url]: https://standardjs.com
 
-### Scan npm for available package names
+### Scan npm for available three-letter acronym package names
+
+tla is 100% a fork of the always awesome [@feross](https://twitter.com/feross)'s module, [available](https://github.com/feross/available), with a different [`dictionary.txt`](./dictionary.txt). He did **99.95%** of the work. Please support his [Patreon](https://www.patreon.com/feross).
 
 ## install
 
 ```
-npm install available -g
+npm install tla -g
 ```
 
 ## usage
@@ -24,10 +26,10 @@ npm install available -g
 Get available names from the npm registry:
 
 ```bash
-$ available
-your
-was
-our
+$ tla
+AAA
+AAI
+AAC
 ...
 ```
 
@@ -35,20 +37,20 @@ Full options list:
 
 ```
 Usage:
-    available [optional-name] <options>
+    tla [optional-name] <options>
 
-    Scan npm for available package names.
+    Scan npm for available three-letter acronym package names.
 
 Examples:
 
     Print lots of possible names:
-        available
-        available --offline
+        tla
+        tla --offline
 
     Check for a certain name:
-        available my-cool-name
-        available my-cool-name --related
-        available my-cool-name --offline
+        tla my-cool-name
+        tla my-cool-name --related
+        tla my-cool-name --offline
 
 Flags:
     -r, --related    Search for related module names (Uses thesaurus)
@@ -59,7 +61,7 @@ Flags:
 
 ### api
 
-#### `available.getNames(opts, next)`
+#### `tla.getNames(opts, next)`
 
 Get available package names from npm.
 
@@ -73,7 +75,7 @@ for "streaming" the possible names from the registry. If `err` is an `Error`, th
 there was a problem and `next` will not be called again. `name` is the available
 package name.
 
-#### `available.checkName(name, opts, next)`
+#### `tla.checkName(name, opts, next)`
 
 Check if a specific `name` is available on npm.
 
@@ -93,3 +95,4 @@ package name.
 ## license
 
 MIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).
+^ I dunno if I update this or not since this is a fork, so I'll leave it. 

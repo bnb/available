@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
-const available = require('../')
+const tla = require('../')
 const connectivity = require('connectivity')
 const minimist = require('minimist')
 const pkg = require('../package.json')
 
 const argv = minimist(process.argv.slice(2), {
-  boolean: ['related', 'offline', 'version', 'help'],
+  boolean: ['offline', 'version', 'help'],
   alias: {
-    r: 'related',
     o: 'offline',
     v: 'version',
     h: 'help'
@@ -30,23 +29,21 @@ if (argv.help) {
 function runHelp () {
   console.log(`
 Usage:
-    available [optional-name] <options>
+    tla [optional-name] <options>
 
     Scan npm for available package names.
 
 Examples:
 
     Print lots of possible names:
-        available
-        available --offline
+        tla
+        tla --offline
 
     Check for a certain name:
-        available my-cool-name
-        available my-cool-name --related
-        available my-cool-name --offline
+        tla my-cool-name
+        tla my-cool-name --offline
 
 Flags:
-    -r, --related    Search for related module names (Uses thesaurus)
     -o, --offline    Force offline mode (Does not verify names are actually available)
     -v, --version    Show current version
     -h, --help       Show usage information
@@ -69,13 +66,14 @@ function runGetNames (online) {
   if (!online) {
     console.error('OFFLINE MODE: Printing list of likely available names...')
   }
-  available.getNames({ online }, printName)
+  tla.getNames({ online }, printName)
 }
 
 function runCheckName (name, online) {
-  available.checkName(name, {
-    online,
-    related: argv.related
+  let sanitizedName = name.toUpperCase()
+
+  tla.checkName(sanitizedName, {
+    online
   }, printName)
 }
 

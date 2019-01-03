@@ -9,7 +9,6 @@ const get = require('simple-get')
 const packageNames = require('all-the-package-names')
 const parallelLimit = require('run-parallel-limit')
 const path = require('path')
-const validateName = require('validate-npm-package-name')
 
 const LIMIT = 10
 const REGISTRY_URL = 'https://registry.npmjs.com/'
@@ -30,15 +29,6 @@ function getNames (opts, next) {
 
 function checkName (name, opts, next) {
   const desiredNames = [name]
-
-  if (opts.related) {
-    const thesaurus = require('thesaurus')
-    const relatedWords = thesaurus
-      .find(name)
-      .map(name => name.replace(/ /g, '-').toLowerCase())
-      .filter(name => validateName(name).validForNewPackages)
-    desiredNames.push(...relatedWords)
-  }
 
   if (opts.online) {
     verifyAvailable(desiredNames, next)
