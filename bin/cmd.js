@@ -79,5 +79,5 @@ function runCheckName (name, online) {
 
 function printName (err, name) {
   if (err) throw err
-  console.log(name)
+  console.log(name.toLowerCase())
 }
