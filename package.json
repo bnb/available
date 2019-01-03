@@ -1,17 +1,17 @@
 {
-  "name": "available",
-  "description": "Scan npm for available package names",
-  "version": "2.1.0",
+  "name": "tla",
+  "description": "Scan npm for available three-letter acronyms",
+  "version": "1.0.0",
   "author": {
-    "name": "Feross Aboukhadijeh",
-    "email": "feross@feross.org",
-    "url": "http://feross.org/"
+    "name": "Tierney Cyren",
+    "email": "accounts@bnb.im",
+    "url": "https://bnb.im"
   },
   "bin": {
-    "available": "./bin/cmd.js"
+    "tla": "./bin/cmd.js"
   },
   "bugs": {
-    "url": "https://github.com/feross/available/issues"
+    "url": "https://github.com/bnb/tla/issues"
   },
   "dependencies": {
     "all-the-package-names": "^1.3.0",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "standard": "*"
   },
-  "homepage": "https://github.com/feross/available",
+  "homepage": "https://github.com/bnb/tla",
   "keywords": [
     "scan npm",
     "scan",
@@ -37,13 +37,16 @@
     "available",
     "available names",
     "available package names",
-    "npm package names"
+    "npm package names",
+    "tla",
+    "three-letter acronym",
+    "three-letter acronyms"
   ],
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/feross/available.git"
+    "url": "git://github.com/bnb/tla.git"
   },
   "scripts": {
     "test": "standard"
