@@ -24,6 +24,12 @@
   "devDependencies": {
     "standard": "*"
   },
+  "files": [
+    "bin/",
+    "dictionary.txt",
+    "index.js",
+    "LICENSE"
+  ],
   "homepage": "https://github.com/bnb/tla",
   "keywords": [
     "scan npm",
